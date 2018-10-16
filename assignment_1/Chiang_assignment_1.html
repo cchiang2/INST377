@@ -237,10 +237,10 @@ var organizations = [
                <td></td>
             </tr>
 
-						<tr>
-							 <td></td>
-							 <td></td>
-						</tr>
+	    <tr>
+		<td></td>
+		 <td></td>
+            </tr>
 
          </table>
 		</div>
@@ -250,67 +250,66 @@ var organizations = [
 //console.log(organizations[0]);
 
 var table = document.getElementById("table").rows[0].cells;
-				var tableRow1 = document.getElementById("table").rows[1].cells;
-				var tableRow2 = document.getElementById("table").rows[2].cells;
-				var tableRow3 = document.getElementById("table").rows[3].cells;
-				var tableRow4 = document.getElementById("table").rows[4].cells;
-				var tableRow5 = document.getElementById("table").rows[5].cells;
+var tableRow1 = document.getElementById("table").rows[1].cells;
+var tableRow2 = document.getElementById("table").rows[2].cells;
+var tableRow3 = document.getElementById("table").rows[3].cells;
+var tableRow4 = document.getElementById("table").rows[4].cells;
+var tableRow5 = document.getElementById("table").rows[5].cells;
 
-				table[0].innerHTML = "Total Amount of Organizations";
-				table[1].innerHTML = organizations.length;
+table[0].innerHTML = "Total Amount of Organizations";
+table[1].innerHTML = organizations.length;
 
-				//Question One
-				var orgType = [];
-				var lessThanTen = [];
-				var northAm = [];
-				var transportationData = [];
-				var forProf = [];
+//Question One
+var orgType = [];
+var lessThanTen = [];
+var northAm = [];
+var transportationData = [];
+var forProf = [];
 
-				for (var key of Object.keys(organizations)) {
-					 var orgKeys = organizations[key];
+for (var key of Object.keys(organizations)) {
+	var orgKeys = organizations[key];
 
-					 if (orgKeys["Organization Type"] == "Nonprofit") {
-							orgType.push(orgKeys["Organization Type"]);
-					 }
+	if (orgKeys["Organization Type"] == "Nonprofit") {
+		orgType.push(orgKeys["Organization Type"]);
+	 }
 
-					 tableRow1[0].innerHTML = "Total of Nonprofit Organizations";
-					 tableRow1[1].innerHTML = orgType.length;
+tableRow1[0].innerHTML = "Total of Nonprofit Organizations";
+tableRow1[1].innerHTML = orgType.length;
 
-					//Question Two
+//Question Two
 
-					 if (orgKeys["Founding Year"] > 2008) {
-							lessThanTen.push(orgKeys["Founding Year"]);
-					 }
+	if (orgKeys["Founding Year"] > 2008) {
+		lessThanTen.push(orgKeys["Founding Year"]);
+	}
 
-					 tableRow2[0].innerHTML = "Total of Organizations Founded Before 2008";
-					 tableRow2[1].innerHTML = lessThanTen.length;
+tableRow2[0].innerHTML = "Total of Organizations Founded Before 2008";
+tableRow2[1].innerHTML = lessThanTen.length;
 
-					 //Question Three
+//Question Three
 
-					 if (orgKeys["Region"] == "North America") {
-							northAm.push(orgKeys["Region"]);
-					 }
+	if (orgKeys["Region"] == "North America") {
+		northAm.push(orgKeys["Region"]);
+	}
 
-					 tableRow3[0].innerHTML = "Total of Organizations in North America";
-					 tableRow3[1].innerHTML = northAm.length;
+tableRow3[0].innerHTML = "Total of Organizations in North America";
+tableRow3[1].innerHTML = northAm.length;
 
-					 //Question Four
+//Question Four
 
-						if (orgKeys["Type of Data Used"] == "Transportation") {
-							transportationData.push(orgKeys["Type of Data Used"]);
-					 }
+	if (orgKeys["Type of Data Used"] == "Transportation") {
+		transportationData.push(orgKeys["Type of Data Used"]);
+	}
+tableRow4[0].innerHTML = "Total of Organizations Using Transportation Data";
+tableRow4[1].innerHTML = transportationData.length;
 
-					 tableRow4[0].innerHTML = "Total of Organizations Using Transportation Data";
-					 tableRow4[1].innerHTML = transportationData.length;
 
+	if (orgKeys["Organization Type"] == "For-profit") {
+		forProf.push(orgKeys["Organization Type"]);
+	}
 
-					 if (orgKeys["Organization Type"] == "For-profit") {
-						 forProf.push(orgKeys["Organization Type"]);
-					}
-
-					tableRow5[0].innerHTML = "Total of For-Profit Organizations";
-					tableRow5[1].innerHTML = forProf.length;
-				 }
+	tableRow5[0].innerHTML = "Total of For-Profit Organizations";
+	tableRow5[1].innerHTML = forProf.length;
+}
 
 
 </script>
